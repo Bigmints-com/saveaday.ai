@@ -1,0 +1,24 @@
+{
+  "whyItMatters": {
+    "title": "What could you do with an extra day?",
+    "text": "Time back is a collective resource. When every teammate wins a quieter day, we can invest in care, curiosity, and the people often left waiting."
+  },
+  "howItWorks": [
+    {
+      "title": "Holiday blueprint",
+      "desc": "Pull together itineraries, flight recommendations, weather snapshots, and hotel holds into a beautiful template you can share instantly."
+    },
+    {
+      "title": "Shopping studio",
+      "desc": "Keep self-filling carts, shipment tracking, and spending patterns in one calm space so restocking and gifting take zero effort."
+    },
+    {
+      "title": "Ops & comms",
+      "desc": "Coordinate escalations, email briefs, and dashboards so updates land before issues grow legs."
+    }
+  ],
+  "cta": {
+    "title": "Take back your time. One day at a time.",
+    "button": "Join the Waitlist"
+  }
+}

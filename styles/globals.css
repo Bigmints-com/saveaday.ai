@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Mona Sans";
+  src: url("/fonts/Mona-Sans.woff2") format("woff2");
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: dark;
+  --font-sans: "Mona Sans", "Inter", "Helvetica Neue", system-ui, sans-serif;
+}
+
+body {
+  @apply bg-surface text-gray-100 antialiased;
+  font-family: var(--font-sans);
+}
+
+a {
+  @apply text-accent transition-colors duration-200;
+}
+
+a:hover {
+  @apply text-accent-emphasis;
+}

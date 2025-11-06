@@ -1,0 +1,36 @@
+{
+  "headline": "Save a day every",
+  "cycles": ["week", "month", "year"],
+  "subtext": "Automation should feel like a teammate for everyone. Let SaveADay handle the repeat work so you can focus on people, ideas, and rest.",
+  "stats": {
+    "week": {
+      "label": "This week",
+      "daysSaved": 1,
+      "summary": "Trade one chaotic day for flow time. Share it with your crew, your community, or yourself.",
+      "ideas": [
+        "Host a listening session with the folks closest to your customers.",
+        "Block one morning for thinking without notifications or back-to-back calls."
+      ]
+    },
+    "month": {
+      "label": "This month",
+      "daysSaved": 4,
+      "summary": "Unlock a long weekend every month without burning PTO or goodwill.",
+      "ideas": [
+        "Invest in team rituals that invite every voice into the roadmap.",
+        "Use the extra hours to support someone who rarely gets unblocked."
+      ]
+    },
+    "year": {
+      "label": "This year",
+      "daysSaved": 52,
+      "summary": "Take back almost two months. Recharge, mentor, or finally launch the idea everyone asked for.",
+      "ideas": [
+        "Plan a proper break for the whole team, not just the loudest voices.",
+        "Prototype a community-led feature or program you have been postponing."
+      ]
+    }
+  },
+  "ctaPrimary": "Try the Demo",
+  "ctaSecondary": "See How It Works"
+}
