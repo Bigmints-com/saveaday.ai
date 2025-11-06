@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 import { MenuIcon } from "lucide-react";
@@ -15,7 +14,7 @@ export default function Header() {
     <header className="sticky top-0 z-40 border-b border-white/10 bg-surface/90 backdrop-blur">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-6 px-6 py-4 sm:px-8">
         <Link href="/" className="flex items-center gap-3">
-          <Image
+          <img
             src="/logo-symbol.svg"
             alt="SaveADay.ai"
             width={36}
