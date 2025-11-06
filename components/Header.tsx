@@ -13,17 +13,13 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-white/10 bg-surface/90 backdrop-blur">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-6 px-6 py-4 sm:px-8">
-        <Link href="/" className="flex items-center gap-3">
+        <Link href="/" className="flex items-center">
           <img
-            src="/logo-symbol.svg"
+            src="/logo-full.svg"
             alt="SaveADay.ai"
-            width={36}
-            height={36}
-            className="h-9 w-9"
+            height={40}
+            className="h-10 w-auto"
           />
-          <span className="text-base font-semibold uppercase tracking-[0.3em] text-brand-blue">
-            SaveADay.ai
-          </span>
         </Link>
 
         <nav className="hidden items-center gap-6 text-sm font-medium text-gray-200 md:flex">
