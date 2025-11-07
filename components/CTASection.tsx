@@ -44,8 +44,8 @@ export default function CTASection() {
         {title}
       </h2>
       <p className="max-w-2xl text-lg text-gray-300">
-        Join founders, operators, and creators discovering how intentional
-        automation gives them back a full day every week.
+        Join the teams replacing manual check-ins and reports with automations
+        that hand back a full day to focus on what matters most.
       </p>
       <button
         onClick={handleJoinWaitlist}

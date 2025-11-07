@@ -16,10 +16,10 @@ type StatsMap = typeof heroData.stats;
 type Timeframe = keyof StatsMap;
 
 const heroBullets = [
-  "Spin up dashboards, automations, and alerts from a single, plain-language prompt.",
-  "Keep projects in view with widgets shaped by how your whole team actually works.",
-  "Surface the moments that need a human call and let the loops close themselves.",
-  "Make space for rest, real conversations, and the ideas only you can champion.",
+  "Automate the status updates, reminders, and follow-ups stealing your day.",
+  "Sync work across the tools you already use without manual copy and paste.",
+  "See dashboards and alerts before projects or finances fall behind.",
+  "Spend the saved time on the launches, customers, and people that matter.",
 ];
 
 export default function HeroSection() {
@@ -90,7 +90,7 @@ export default function HeroSection() {
         >
           <span className="inline-flex w-fit items-center gap-2 rounded-full border border-brand-blue/60 bg-brand-blue/15 px-6 py-2 text-xs font-semibold uppercase tracking-[0.4em] text-brand-blue shadow-[0_0_25px_rgba(58,139,255,0.25)]">
             <Sparkles className="h-4 w-4" />
-            Focus mode unlocked
+            Day saved mode
           </span>
 
           <h1 className="text-balance font-display text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
@@ -146,7 +146,7 @@ export default function HeroSection() {
           <div className="relative flex w-full max-w-md flex-col gap-6 rounded-3xl border border-white/10 bg-gradient-to-br from-surface-raise via-[#0f1824] to-[#141d2b] p-8 shadow-[0_40px_90px_-45px_rgba(58,139,255,0.45)]">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/60">
-                Choose your reclaimed window
+                Pick your saved window
               </p>
               <LayoutGroup>
                 <div className="mt-3 grid grid-cols-3 gap-2 rounded-full border border-white/10 bg-white/5 p-1 text-sm font-semibold">

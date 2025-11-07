@@ -120,32 +120,32 @@ export default function TimeSavingsCalculator() {
         <div className="space-y-6">
           <div className="flex items-center gap-3 text-sm uppercase tracking-[0.3em] text-white/60">
             <span className="h-2 w-2 rounded-full bg-accent animate-pulse" />
-            Build your reclaimed hours recipe
+            Saved time snapshot
           </div>
           <h3 className="font-display text-3xl font-semibold text-white sm:text-4xl">
-            Drag the sliders to see how quickly time turns into freedom.
+            Drag the sliders to see how fast a day comes back.
           </h3>
           <p className="text-base text-gray-300 sm:text-lg">
-            Help your team find breathing room. Automate the chores and gift
-            back deep work days, creative mornings, or slow walks with the dog.
+            Adjust the numbers to total the manual hours you automate and the
+            days you give back to focused work.
           </p>
 
           <div className="grid gap-5 sm:grid-cols-2">
             {[
               {
-                label: "Days back every week",
+                label: "Days back each week",
                 value: formatDecimal(weeklyDays),
               },
               {
-                label: "Creative days every month",
+                label: "Days back each month",
                 value: formatDecimal(monthlyDays),
               },
               {
-                label: "Sabbatical days per year",
+                label: "Days back each year",
                 value: formatDecimal(yearlyDays),
               },
               {
-                label: "Bonus years in a career",
+                label: "Extra years across a career",
                 value: formatDecimal(lifetimeYears),
               },
             ].map((stat) => (
@@ -168,10 +168,10 @@ export default function TimeSavingsCalculator() {
           <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-black/40 px-6 py-4">
             <div>
               <p className="text-xs uppercase tracking-[0.3em] text-white/60">
-                Your vibe check
+                Where the day goes
               </p>
               <p className="mt-2 text-sm text-gray-200">
-                Every slider nudge reveals more time to reinvest into living.
+                Each adjustment shows how you can invest the time you just won back.
               </p>
             </div>
             <motion.div

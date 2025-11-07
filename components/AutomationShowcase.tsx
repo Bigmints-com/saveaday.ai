@@ -10,7 +10,7 @@ import {
   Sparkles,
 } from "lucide-react";
 
-const PROMPT = "Visualize my project management portfolio";
+const PROMPT = "Automate my weekly status update";
 
 type Scene = "idle" | "generating" | "complete";
 
@@ -276,13 +276,13 @@ export default function AutomationShowcase() {
 
             {scene === "idle" ? (
               <p className="text-sm text-gray-400">
-                Click the blue button to see SaveADay translate a plain prompt
-                into a shared dashboard experience.
+                Press play to watch SaveADay build the updates you used to write
+                by hand.
               </p>
             ) : scene === "complete" ? (
               <p className="text-sm text-gray-400">
-                Widgets assembled. Explore the cards below or run it again with
-                a new prompt.
+                Automations ready. Review the outputs or run it again with a new
+                prompt.
               </p>
             ) : null}
           </div>

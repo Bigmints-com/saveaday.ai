@@ -1,0 +1,50 @@
+{
+  "apps": [
+    {
+      "name": "Waitlist",
+      "description": "Build and manage waitlists for your products and services",
+      "dashboardUrl": "https://waitlist.saveaday.ai/dashboard",
+      "icon": "📋",
+      "color": "blue"
+    },
+    {
+      "name": "Leadforms",
+      "description": "Create beautiful lead capture forms and manage your leads",
+      "dashboardUrl": "https://leads.saveaday.ai/dashboard",
+      "icon": "📝",
+      "color": "green"
+    },
+    {
+      "name": "Bookings",
+      "description": "Schedule and manage appointments with ease",
+      "dashboardUrl": "https://bookings.saveaday.ai/dashboard",
+      "icon": "📅",
+      "color": "purple"
+    },
+    {
+      "name": "Surveys",
+      "description": "Create surveys and collect feedback from your audience",
+      "dashboardUrl": "#",
+      "icon": "📋",
+      "color": "pink",
+      "comingSoon": true
+    },
+    {
+      "name": "Catalogues",
+      "description": "Build and share product catalogs and collections",
+      "dashboardUrl": "#",
+      "icon": "📚",
+      "color": "indigo",
+      "comingSoon": true
+    },
+    {
+      "name": "Link Pages",
+      "description": "Create beautiful link-in-bio pages",
+      "dashboardUrl": "#",
+      "icon": "🔗",
+      "color": "teal",
+      "comingSoon": true
+    }
+  ]
+}
+

@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Sparkles } from "lucide-react";
 
 import AutomationShowcase from "@/components/AutomationShowcase";
+import AppsSection from "@/components/AppsSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
@@ -24,8 +25,8 @@ const HomePage: NextPage = () => {
         <Section
           id="how-it-works"
           eyebrow="How it works"
-          title="Automation that feels like a teammate"
-          description="See how SaveADay choreographs holiday planning, thoughtful shopping, and everyday ops into calm, living spaces."
+          title="How SaveADay gives you time back"
+          description="Move your manual tasks into automations and get an extra working day without extra headcount."
         >
           <AutomationShowcase />
 
@@ -58,11 +59,20 @@ const HomePage: NextPage = () => {
         <Section
           id="calculator"
           eyebrow="Play with the numbers"
-          title="See how much time SaveADay gives back"
-          description="Customize a couple of assumptions to uncover how fast small automations multiply into big life upgrades."
+          title="See how quickly a day comes back"
+          description="Adjust the inputs to quantify how automating routine updates stacks into a reclaimed day."
           align="left"
         >
           <TimeSavingsCalculator />
+        </Section>
+
+        <Section
+          id="apps"
+          eyebrow="Our Platform"
+          title="Launch the automations you need"
+          description="Every SaveADay app targets a repeatable task so you can hand it off and get the day back."
+        >
+          <AppsSection />
         </Section>
 
         <CTASection />
@@ -85,15 +95,15 @@ const benefitsCopy: Record<
   }
 > = {
   business: {
-    title: "Run the business without babysitting every workflow",
+    title: "Keep teams shipping while the busywork runs itself",
     description:
-      "SaveADay plugs into the platforms your org already trusts. The result: project updates, finance checks, communications, and ops escalations all stay in sync without another status meeting.",
+      "SaveADay connects to your stack, closes communication loops, and hands back a full day to focus on growth.",
     highlights: [
-      "Project portfolio dashboards that stay current across Jira, Asana, Linear, and internal tooling.",
-      "Finance and revenue snapshots that reconcile invoices, expenses, and forecasts as close to real time as you need.",
-      "Agentic workflows that triage emails, route escalations, and notify the right people before issues spread.",
+      "Automated standups, status reports, and alerts across Jira, Asana, Linear, and your internal tools.",
+      "Finance snapshots that reconcile invoices, expenses, and approvals without spreadsheet hours.",
+      "Smart routing that triages escalations and pings the right teammate before work stalls.",
     ],
-    callout: "Automation that keeps the full commercial engine humming—projects, finance, comms, and ops included.",
+    callout: "Reclaim a day each week to ship product, close deals, and support customers with confidence.",
     connectors: [
       { name: "Google Drive", logo: "/connectors/google.svg" },
       { name: "HubSpot", logo: "/connectors/hubspot.svg" },
@@ -104,15 +114,15 @@ const benefitsCopy: Record<
     ],
   },
   personal: {
-    title: "Reclaim personal energy for the life you actually want",
+    title: "Let life admin run on autopilot",
     description:
-      "Household admin shouldn’t eat your evenings. SaveADay coordinates the utilities, finances, travel, and ongoing life logistics so you can focus on family, creativity, and rest.",
+      "SaveADay handles the reminders, bills, and logistics that crowd your schedule so you can spend time where it counts.",
     highlights: [
-      "Smart reminders that auto-pay utilities, surface upcoming renewals, and keep budgets on track.",
-      "Travel planning that stitches together bookings, itineraries, and packing prompts without digging through inboxes.",
-      "Personal knowledge base that stores recipes, health records, and quick notes for the people you care for.",
+      "Automatic bill nudges, renewal reminders, and budget check-ins you never have to chase.",
+      "Travel and event plans that assemble bookings, itineraries, and packing lists for you.",
+      "Shared notes, records, and care tasks in one place for the people who rely on you.",
     ],
-    callout: "Make room for the joyful, the meaningful, and the restorative parts of being human.",
+    callout: "Use your reclaimed day for family, creativity, or rest—SaveADay keeps the chores moving.",
     connectors: [
       { name: "Gmail", logo: "/connectors/google.svg" },
       { name: "Notion", logo: "/connectors/notion.svg" },
@@ -132,7 +142,7 @@ function BenefitsTabs() {
       id="benefits"
       eyebrow="Why it helps"
       title="Built for teams and humans"
-      description="Automation should meet people where they are. Toggle the lens to explore how SaveADay supports the workday and the everyday."
+      description="Toggle the lens to see how SaveADay frees a day for teams and households."
       align="left"
     >
       <div className="grid gap-6 rounded-3xl border border-white/10 bg-gradient-to-br from-surface-raise via-[#111b2a] to-[#0e1724] p-10 shadow-[0_35px_90px_-50px_rgba(58,139,255,0.55)] backdrop-blur-sm lg:grid-cols-[1.15fr_0.85fr]">

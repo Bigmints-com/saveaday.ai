@@ -1,24 +1,24 @@
 {
   "whyItMatters": {
-    "title": "What could you do with an extra day?",
-    "text": "Time back is a collective resource. When every teammate wins a quieter day, we can invest in care, curiosity, and the people often left waiting."
+    "title": "What will you do with the day you get back?",
+    "text": "Every automated task unlocks focus for the work, people, and ideas that actually move you forward."
   },
   "howItWorks": [
     {
-      "title": "Holiday blueprint",
-      "desc": "Pull together itineraries, flight recommendations, weather snapshots, and hotel holds into a beautiful template you can share instantly."
+      "title": "Spot the busywork",
+      "desc": "List the updates, reminders, and follow-ups that eat hours every week."
     },
     {
-      "title": "Shopping studio",
-      "desc": "Keep self-filling carts, shipment tracking, and spending patterns in one calm space so restocking and gifting take zero effort."
+      "title": "Switch on automation",
+      "desc": "Pick the SaveADay app or recipe that plugs into your tools and handles the task for you."
     },
     {
-      "title": "Ops & comms",
-      "desc": "Coordinate escalations, email briefs, and dashboards so updates land before issues grow legs."
+      "title": "Spend the saved day well",
+      "desc": "Dashboards, alerts, and confirmations run in the background while you focus on what matters."
     }
   ],
   "cta": {
-    "title": "Take back your time. One day at a time.",
+    "title": "Ready to save your next day?",
     "button": "Join the Waitlist"
   }
 }
