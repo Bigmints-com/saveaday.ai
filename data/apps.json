@@ -1,0 +1,67 @@
+{
+  "apps": [
+    {
+      "name": "Waitlists",
+      "description": "Build and manage waitlists for your products and services",
+      "dashboardUrl": "https://waitlist.saveaday.ai/dashboard",
+      "icon": "📋",
+      "color": "purple"
+    },
+    {
+      "name": "Leads",
+      "description": "Create beautiful lead capture forms and manage your leads",
+      "dashboardUrl": "https://leads.saveaday.ai/dashboard",
+      "icon": "📝",
+      "color": "green"
+    },
+    {
+      "name": "Bookings",
+      "description": "Schedule and manage appointments with ease",
+      "dashboardUrl": "https://bookings.saveaday.ai/dashboard",
+      "icon": "📅",
+      "color": "blue"
+    },
+    {
+      "name": "Links",
+      "description": "Create beautiful link-in-bio pages for your brand",
+      "dashboardUrl": "https://links.saveaday.ai/dashboard",
+      "icon": "🔗",
+      "color": "teal"
+    },
+    {
+      "name": "Catalogues",
+      "description": "Build and share product catalogs and collections",
+      "dashboardUrl": "https://catalogues.saveaday.ai/dashboard",
+      "icon": "📚",
+      "color": "indigo"
+    },
+    {
+      "name": "Surveys",
+      "description": "Create surveys and collect feedback from your audience",
+      "dashboardUrl": "https://surveys.saveaday.ai/dashboard",
+      "icon": "📊",
+      "color": "pink"
+    },
+    {
+      "name": "Feeds",
+      "description": "Curate and share news feeds with your audience",
+      "dashboardUrl": "https://feeds.saveaday.ai/dashboard",
+      "icon": "📰",
+      "color": "orange"
+    },
+    {
+      "name": "Tasks",
+      "description": "Manage tasks and projects with kanban boards",
+      "dashboardUrl": "https://tasks.saveaday.ai/dashboard",
+      "icon": "✓",
+      "color": "blue"
+    },
+    {
+      "name": "SaveADay",
+      "description": "Your central hub for all automation and productivity tools",
+      "dashboardUrl": "https://app.saveaday.ai/dashboard",
+      "icon": "✨",
+      "color": "blue"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+@import "../../../packages/shared-ui/src/design-system/theme.css";
+@source "../../../packages/shared-ui/src/**/*.{js,ts,jsx,tsx}";
+
+@font-face {
+  font-family: "Mona Sans";
+  src: url("/fonts/Mona-Sans.woff2") format("woff2");
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-brand-accent: #3b82f6;
+  /* SaveADay blue */
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Mona Sans", "Inter", "Helvetica Neue", system-ui, sans-serif;
+}
+
+body {
+  background: #ffffff;
+  color: #171717;
+  font-family: var(--font-sans);
+}
+
+/* Status colors */
+:root {
+  --color-success: #10b981;
+  --color-danger: #ef4444;
+  --color-warning: #f59e0b;
+  --color-info: #3b82f6;
+}

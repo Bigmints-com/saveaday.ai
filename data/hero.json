@@ -1,0 +1,38 @@
+{
+  "headline": "Save a day every",
+  "cycles": [
+    "week"
+  ],
+  "subtext": "SaveADay automates updates, scheduling, and reporting so you win back time for the work that matters most.",
+  "stats": {
+    "week": {
+      "label": "This week",
+      "daysSaved": 1,
+      "summary": "Automate check-ins and inbox triage to reclaim one deep-focus day.",
+      "ideas": [
+        "Ship the project that keeps getting pushed by meetings.",
+        "Spend the day unblocking customers instead of chasing status."
+      ]
+    },
+    "month": {
+      "label": "This month",
+      "daysSaved": 4,
+      "summary": "Stack four free days this month by letting SaveADay run your repeats.",
+      "ideas": [
+        "Plan the roadmap with clarity instead of last-minute fire drills.",
+        "Give your team a real break while automations keep work moving."
+      ]
+    },
+    "year": {
+      "label": "This year",
+      "daysSaved": 52,
+      "summary": "Earn 52 extra days to focus on the launches, clients, and people who matter.",
+      "ideas": [
+        "Turn the saved time into new revenue, products, or community wins.",
+        "Build the culture you want without busywork blocking the way."
+      ]
+    }
+  },
+  "ctaPrimary": "Start saving a day",
+  "ctaSecondary": "See how it works"
+}

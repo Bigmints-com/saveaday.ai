@@ -1,0 +1,24 @@
+{
+  "whyItMatters": {
+    "title": "What will you do with the day you get back?",
+    "text": "Every automated task unlocks focus for the work, people, and ideas that actually move you forward."
+  },
+  "howItWorks": [
+    {
+      "title": "Spot the busywork",
+      "desc": "List the updates, reminders, and follow-ups that eat hours every week."
+    },
+    {
+      "title": "Switch on automation",
+      "desc": "Pick the SaveADay app or recipe that plugs into your tools and handles the task for you."
+    },
+    {
+      "title": "Spend the saved day well",
+      "desc": "Dashboards, alerts, and confirmations run in the background while you focus on what matters."
+    }
+  ],
+  "cta": {
+    "title": "Ready to save your next day?",
+    "button": "Join the Waitlist"
+  }
+}
