@@ -101,7 +101,7 @@ const DocsPage: NextPage = () => {
               </div>
             </div>
             <p className="text-sm text-gray-400">
-              If the iframe fails to load (private repo, CSP, etc.) the primary "View docs" button above will always take you to the
+              If the iframe fails to load (private repo, CSP, etc.) the primary &quot;View docs&quot; button above will always take you to the
               canonical site.
             </p>
           </div>

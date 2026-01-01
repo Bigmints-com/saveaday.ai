@@ -1,5 +1,4 @@
-@import "../../../packages/shared-ui/src/design-system/theme.css";
-@source "../../../packages/shared-ui/src/**/*.{js,ts,jsx,tsx}";
+@import "tailwindcss";
 
 @font-face {
   font-family: "Mona Sans";

@@ -1,26 +1,16 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import { AuthPanel } from '@saveaday/shared-auth/client';
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 
-const RegisterPage: NextPage = () => {
+export default function Register() {
+  const router = useRouter();
+
+  useEffect(() => {
+    window.location.href = 'https://app.saveaday.ai/register';
+  }, []);
+
   return (
-    <>
-      <Head>
-        <title>Create account - SaveADay.ai</title>
-        <meta name="description" content="Create your SaveADay.ai account" />
-      </Head>
-      <div className="flex min-h-screen w-full items-center justify-center bg-gray-50 px-6 py-16">
-        <div className="w-full max-w-md rounded-lg border border-gray-200 bg-white p-10 shadow-sm">
-          <AuthPanel
-            mode="register"
-            title="Create your SaveADay.ai account"
-            description="We'll send you a secure link to verify your email and finish setting up your account."
-          />
-        </div>
-      </div>
-    </>
+    <div className="flex min-h-screen items-center justify-center bg-white">
+      <p className="text-gray-500">Redirecting to register...</p>
+    </div>
   );
-};
-
-export default RegisterPage;
-
+}
