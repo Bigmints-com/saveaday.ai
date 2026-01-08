@@ -1,4 +1,5 @@
 import { useCallback } from "react";
+import Link from "next/link";
 
 import sections from "@/data/sections.json";
 
@@ -42,13 +43,21 @@ export default function CTASection() {
         Join the teams replacing manual check-ins and reports with automations
         that hand back a full day to focus on what matters most.
       </p>
-      <button
-        onClick={handleJoinWaitlist}
-        data-waitlist-token="7fce994a363f8f3abef1249f"
-        className="inline-flex items-center justify-center rounded-md bg-blue-600 px-8 py-3 text-base font-semibold text-white transition hover:bg-blue-700"
-      >
-        {button}
-      </button>
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+        <Link
+          href="#apps"
+          className="inline-flex items-center justify-center rounded-md border border-gray-300 px-8 py-3 text-base font-semibold text-gray-700 transition hover:bg-gray-50"
+        >
+          Browse the App Catalog
+        </Link>
+        <button
+          onClick={handleJoinWaitlist}
+          data-waitlist-token="7fce994a363f8f3abef1249f"
+          className="inline-flex items-center justify-center rounded-md bg-blue-600 px-8 py-3 text-base font-semibold text-white transition hover:bg-blue-700"
+        >
+          Experience the Full Ecosystem
+        </button>
+      </div>
     </section>
   );
 }

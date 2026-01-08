@@ -10,7 +10,13 @@ import {
   FileText,
   CheckCircle,
   HardDrive,
-  Users
+  Users,
+  ArrowRight,
+  ShieldCheck,
+  Layers,
+  Zap,
+  Workflow,
+  Cpu
 } from "lucide-react";
 
 import AutomationShowcase from "@/components/AutomationShowcase";
@@ -32,6 +38,33 @@ const HomePage: NextPage = () => {
       <HeroSection />
       <main className="space-y-24 pb-24">
         <BenefitsTabs />
+
+        <Section
+          id="choice"
+          eyebrow="The Power of Choice"
+          title="Start with one. Grow into all."
+          description="Whether you need a high-performance waitlist for your next launch or an autonomous booking system for your consultancy, our apps are built to be industry-leaders in their own right. No bloat. No forced bundles. Just the tools you need, exactly when you need them."
+          align="center"
+        >
+          <div className="mx-auto max-w-4xl rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
+            <div className="grid gap-8 md:grid-cols-2">
+              <div className="flex flex-col gap-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+                  <Zap className="h-6 w-6" />
+                </div>
+                <h4 className="text-xl font-semibold text-gray-900">A-la-carte Power</h4>
+                <p className="text-gray-600">Each application is standard-defining on its own. Buy only what you need, with zero forced dependencies.</p>
+              </div>
+              <div className="flex flex-col gap-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-purple-50 text-purple-600">
+                  <Workflow className="h-6 w-6" />
+                </div>
+                <h4 className="text-xl font-semibold text-gray-900">Ecosystem Synergy</h4>
+                <p className="text-gray-600">When used together, our apps share context and data automatically, creating a &quot;force multiplier&quot; for your workflow.</p>
+              </div>
+            </div>
+          </div>
+        </Section>
 
         <Section
           id="how-it-works"
@@ -68,6 +101,44 @@ const HomePage: NextPage = () => {
         </Section>
 
         <Section
+          id="comparison"
+          eyebrow="Integration Magic"
+          title="Solo Power vs. Ecosystem Synergy"
+          description="See the difference between using our apps as best-in-class standalone tools versus a unified force multiplier."
+        >
+          <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
+            <div className="overflow-x-auto">
+              <table className="w-full text-left text-sm">
+                <thead>
+                  <tr className="border-b border-gray-100 bg-gray-50/50">
+                    <th className="px-6 py-4 font-semibold text-gray-900">Use Case</th>
+                    <th className="px-6 py-4 font-semibold text-gray-900">Solo Mode (Independent)</th>
+                    <th className="px-6 py-4 font-semibold text-blue-600">Ecosystem Mode (Integrated)</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-100">
+                  <tr>
+                    <td className="px-6 py-5 font-medium text-gray-900">Lead Capture</td>
+                    <td className="px-6 py-5 text-gray-600">High-converting forms that feed into your existing CRM.</td>
+                    <td className="px-6 py-5 text-gray-600 bg-blue-50/30">Form data triggers a <span className="font-semibold">Waitlist</span> rank and auto-books a discovery call in <span className="font-semibold">Bapp</span>.</td>
+                  </tr>
+                  <tr>
+                    <td className="px-6 py-5 font-medium text-gray-900">Feedback</td>
+                    <td className="px-6 py-5 text-gray-600">Professional surveys with deep sentiment analysis.</td>
+                    <td className="px-6 py-5 text-gray-600 bg-blue-50/30">Poor survey scores automatically create an &quot;Urgent&quot; ticket in your <span className="font-semibold">Kanban</span> board.</td>
+                  </tr>
+                  <tr>
+                    <td className="px-6 py-5 font-medium text-gray-900">Scheduling</td>
+                    <td className="px-6 py-5 text-gray-600">A frictionless link for clients to book your time.</td>
+                    <td className="px-6 py-5 text-gray-600 bg-blue-50/30">Bookings automatically update your <span className="font-semibold">Newsfeed</span> so your team stays in the loop in real-time.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </Section>
+
+        <Section
           id="calculator"
           eyebrow="Play with the numbers"
           title="See how quickly a day comes back"
@@ -84,6 +155,63 @@ const HomePage: NextPage = () => {
           description="Every SaveADay app targets a repeatable task so you can hand it off and get the day back."
         >
           <AppsSection />
+        </Section>
+
+        <Section
+          id="technical"
+          eyebrow="Technical Excellence"
+          title="Decoupled for Performance. Unified for Context."
+          description="Built for the prosumer and technical founder who demands specialized performance without the bloat."
+          align="left"
+        >
+          <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
+            <div className="space-y-6">
+              <div className="flex gap-4">
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-gray-100 text-gray-600">
+                  <Layers className="h-5 w-5" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900">Decoupled Architecture</h4>
+                  <p className="text-sm text-gray-600">Each app is a standalone Next.js environment with its own dedicated Firestore database. Zero cross-app latency, maximum uptime.</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-gray-100 text-gray-600">
+                  <ShieldCheck className="h-5 w-5" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900">Unified Auth Layer</h4>
+                  <p className="text-sm text-gray-600">Our <code className="text-blue-600 font-semibold">@saveaday/shared-auth</code> layer ensures your identity remains singular across the entire ecosystem.</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-gray-100 text-gray-600">
+                  <Cpu className="h-5 w-5" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900">Point Solution Performance</h4>
+                  <p className="text-sm text-gray-600 text-balance">Get the specialized performance of a point solution with the data-integrity of an All-in-One.</p>
+                </div>
+              </div>
+            </div>
+            <div className="relative aspect-video overflow-hidden rounded-2xl border border-gray-200 bg-gray-50 shadow-inner flex items-center justify-center p-8">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50" />
+              <div className="relative flex flex-col items-center gap-4 text-center">
+                <div className="flex -space-x-4">
+                  {[1, 2, 3].map(i => (
+                    <div key={i} className="h-16 w-16 rounded-2xl bg-white border border-gray-200 shadow-sm flex items-center justify-center text-blue-600">
+                      <Database className="h-8 w-8" />
+                    </div>
+                  ))}
+                </div>
+                <div className="h-px w-32 bg-gray-200" />
+                <div className="h-20 w-48 rounded-2xl bg-blue-600 shadow-lg flex items-center justify-center gap-2 text-white px-4">
+                  <ShieldCheck className="h-6 w-6" />
+                  <span className="font-semibold text-sm">Shared Auth</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </Section>
 
         <CTASection />
@@ -174,8 +302,8 @@ function BenefitsTabs() {
                     type="button"
                     onClick={() => setActiveTab(key)}
                     className={`rounded-full px-4 py-1 capitalize transition ${isActive
-                        ? "bg-brand-accent text-white shadow-sm"
-                        : "text-gray-600 hover:text-gray-900"
+                      ? "bg-brand-accent text-white shadow-sm"
+                      : "text-gray-600 hover:text-gray-900"
                       }`}
                   >
                     {key}
