@@ -4,7 +4,7 @@ import Link from "next/link";
 import appsData from "@/data/apps.json";
 import AppLogo from "./AppLogo";
 
-type AppColor = "blue" | "green" | "purple" | "orange" | "pink" | "indigo" | "teal";
+type AppColor = "blue" | "green" | "purple" | "orange" | "pink" | "indigo" | "teal" | "violet";
 
 export default function AppsSection() {
   const { apps } = appsData;

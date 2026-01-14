@@ -57,6 +57,13 @@
       "color": "blue"
     },
     {
+      "name": "Referrals",
+      "description": "Create referral campaigns and grow your audience",
+      "dashboardUrl": "https://referrals.saveaday.ai/dashboard",
+      "icon": "🤝",
+      "color": "violet"
+    },
+    {
       "name": "SaveADay",
       "description": "Your central hub for all automation and productivity tools",
       "dashboardUrl": "https://app.saveaday.ai/dashboard",

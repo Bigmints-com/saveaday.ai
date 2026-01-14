@@ -1,4 +1,4 @@
-type AppColor = "blue" | "green" | "purple" | "orange" | "pink" | "indigo" | "teal";
+type AppColor = "blue" | "green" | "purple" | "orange" | "pink" | "indigo" | "teal" | "violet";
 
 interface AppLogoProps {
   appName: string;
@@ -15,6 +15,7 @@ const colorMap: Record<AppColor, string> = {
   pink: "#ec4899",
   indigo: "#6366f1",
   teal: "#14b8a6",
+  violet: "#8b5cf6",
 };
 
 export default function AppLogo({ appName, color }: AppLogoProps) {
