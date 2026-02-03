@@ -97,7 +97,7 @@ export default function AutomationFlows() {
         <ToggleGroup 
           type="single" 
           value={activeCategory} 
-          onValueChange={(value) => value && setActiveCategory(value)}
+          onValueChange={(value: string) => value && setActiveCategory(value)}
           className="bg-muted/50 p-1.5 rounded-xl border border-border/50"
         >
           {categories.map((cat) => (
