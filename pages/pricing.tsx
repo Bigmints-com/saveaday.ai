@@ -89,7 +89,7 @@ const PricingPage: NextPage = () => {
         >
           {/* Pricing Table */}
           <Card className="mt-16 border shadow-lg">
-            <CardContent className="p-0 pt-8">
+            <CardContent className="p-0">
               <div className="overflow-x-auto">
                 <Table>
                   <TableHeader>
@@ -98,22 +98,22 @@ const PricingPage: NextPage = () => {
                       {tiers.map((tier) => (
                         <TableHead 
                           key={tier.name} 
-                          className={`text-center py-6 px-8 relative ${tier.popular ? 'bg-primary/10' : ''}`}
+                          className={`text-center py-6 px-8 ${tier.popular ? 'bg-primary/10' : ''}`}
                         >
-                          {tier.popular && (
-                            <div className="absolute -top-6 left-1/2 -translate-x-1/2">
+                          <div className="flex flex-col items-center gap-2">
+                            {tier.popular && (
                               <Badge className="bg-primary text-primary-foreground border-0 shadow-md px-3 py-1">
                                 <Sparkles className="h-3 w-3 mr-1" />
                                 Popular
                               </Badge>
+                            )}
+                            <div className="text-lg font-bold text-foreground">
+                              {tier.name}
                             </div>
-                          )}
-                          <div className="text-lg font-bold text-foreground mb-2">
-                            {tier.name}
+                            <Badge variant="outline" className="text-xs font-semibold">
+                              {tier.price}
+                            </Badge>
                           </div>
-                          <Badge variant="outline" className="text-xs font-semibold">
-                            {tier.price}
-                          </Badge>
                         </TableHead>
                       ))}
                     </TableRow>
