@@ -92,20 +92,25 @@ const PricingPage: NextPage = () => {
                 <Table>
                   <TableHeader>
                     <TableRow className="bg-muted/30 border-b">
-                      <TableHead className="font-bold text-foreground text-base py-6 pl-8">Features</TableHead>
+                      <TableHead className="font-bold text-foreground text-base py-6 pl-8 align-middle">Features</TableHead>
                       {tiers.map((tier) => (
                         <TableHead 
                           key={tier.name} 
-                          className={`text-center py-6 px-8 ${tier.popular ? 'bg-primary/10' : ''}`}
+                          className={`text-center py-6 px-8 align-top ${tier.popular ? 'bg-primary/10' : ''}`}
                         >
-                          <div className="flex flex-col items-center gap-2">
-                            {tier.popular && (
-                              <Badge className="bg-primary text-primary-foreground border-0 shadow-md px-3 py-1">
-                                <Sparkles className="h-3 w-3 mr-1" />
-                                Popular
-                              </Badge>
-                            )}
-                            <div className="text-lg font-bold text-foreground">
+                          <div className="flex flex-col items-center">
+                            {/* Badge Area - Fixed Height to ensure alignment */}
+                            <div className="h-8 mb-2 flex items-end justify-center">
+                              {tier.popular && (
+                                <Badge className="bg-primary text-primary-foreground border-0 shadow-md px-3 py-1">
+                                  <Sparkles className="h-3 w-3 mr-1" />
+                                  Popular
+                                </Badge>
+                              )}
+                            </div>
+                            
+                            {/* Titles - Will be aligned because of fixed height above */}
+                            <div className="text-lg font-bold text-foreground mb-2">
                               {tier.name}
                             </div>
                             <Badge variant="outline" className="text-xs font-semibold">
