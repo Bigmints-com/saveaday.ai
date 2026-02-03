@@ -96,7 +96,10 @@ const PricingPage: NextPage = () => {
                     <TableRow className="bg-muted/30 border-b">
                       <TableHead className="font-bold text-foreground text-base py-6 pl-8">Features</TableHead>
                       {tiers.map((tier) => (
-                        <TableHead key={tier.name} className="text-center py-6 px-8 relative">
+                        <TableHead 
+                          key={tier.name} 
+                          className={`text-center py-6 px-8 relative ${tier.popular ? 'bg-primary/10' : ''}`}
+                        >
                           {tier.popular && (
                             <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                               <Badge className="bg-primary text-primary-foreground border-0 shadow-md px-3 py-1">
@@ -134,7 +137,7 @@ const PricingPage: NextPage = () => {
                             <TableCell className="font-medium text-foreground py-4 pl-8">{feature.name}</TableCell>
                             <TableCell className="text-center py-4 px-8">{renderCell(feature.starter)}</TableCell>
                             <TableCell className="text-center py-4 px-8">{renderCell(feature.plus)}</TableCell>
-                            <TableCell className="text-center py-4 px-8">{renderCell(feature.pro)}</TableCell>
+                            <TableCell className="text-center py-4 px-8 bg-primary/5">{renderCell(feature.pro)}</TableCell>
                             <TableCell className="text-center py-4 px-8">{renderCell(feature.enterprise)}</TableCell>
                           </TableRow>
                         ))}
@@ -144,7 +147,10 @@ const PricingPage: NextPage = () => {
                     <TableRow className="bg-muted/30 border-t">
                       <TableCell className="py-6" />
                       {tiers.map((tier) => (
-                        <TableCell key={tier.name} className="text-center py-8 px-8">
+                        <TableCell 
+                          key={tier.name} 
+                          className={`text-center py-8 px-8 ${tier.popular ? 'bg-primary/10' : ''}`}
+                        >
                           <Button 
                             variant={tier.popular ? "default" : "outline"}
                             disabled 
