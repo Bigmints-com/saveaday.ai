@@ -1,6 +1,8 @@
 import type { NextPage } from "next";
 
 import AutomationFlows from "@/components/AutomationFlows";
+import MetricsSection from "@/components/MetricsSection";
+import AISection from "@/components/AISection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
@@ -14,10 +16,10 @@ const HomePage: NextPage = () => {
   const { howItWorks } = sections;
 
   return (
-    <div className="bg-background">
+    <div className="min-h-screen bg-background">
       <Header />
       <HeroSection />
-      <main className="space-y-24 pb-24">
+      <main className="space-y-0">
 
         <Section
           id="how-it-works"
@@ -27,21 +29,43 @@ const HomePage: NextPage = () => {
         >
           <AutomationFlows />
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-3">
+          <div className="mt-16 grid gap-6 sm:grid-cols-3">
             {howItWorks.map((item, index) => (
-              <Card key={item.title} className="hover:border-primary transition-colors">
-                <CardContent className="flex flex-col gap-3 p-6">
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 font-display text-sm font-semibold text-primary">
+              <Card 
+                key={item.title} 
+                className="group border-border/50 bg-white/50 backdrop-blur-sm hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              >
+                <CardContent className="flex flex-col gap-4 p-6">
+                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 text-lg font-bold text-white shadow-lg">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <h3 className="text-lg font-semibold text-foreground">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground">{item.desc}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
                 </CardContent>
               </Card>
             ))}
           </div>
+        </Section>
+
+        <Section
+          id="ai"
+          eyebrow="Human + Machine"
+          title="Powered by You, Assisted by AI"
+          description="You stay in control. AI handles the execution. Together, you accomplish more with less effort."
+          gradient
+        >
+          <AISection />
+        </Section>
+
+        <Section
+          id="metrics"
+          eyebrow="Results you can measure"
+          title="Metrics that keep you on track"
+          description="Real-time visibility into your automation performance. Know exactly how much time you're saving."
+        >
+          <MetricsSection />
         </Section>
 
         <CTASection />
