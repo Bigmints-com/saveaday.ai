@@ -20,10 +20,10 @@ import {
 } from "@/components/ui/table";
 
 const tiers = [
-  { name: "Starter", price: "Coming Soon", gradient: "from-blue-500 to-cyan-500" },
-  { name: "Plus", price: "Coming Soon", gradient: "from-purple-500 to-pink-500" },
-  { name: "Pro", price: "Coming Soon", gradient: "from-orange-500 to-red-500", popular: true },
-  { name: "Enterprise", price: "Custom", gradient: "from-emerald-500 to-teal-500" },
+  { name: "Starter", price: "Coming Soon" },
+  { name: "Plus", price: "Coming Soon" },
+  { name: "Pro", price: "Coming Soon", popular: true },
+  { name: "Enterprise", price: "Custom" },
 ];
 
 const featureGroups = [
@@ -70,7 +70,7 @@ const PricingPage: NextPage = () => {
     if (val === "✓") return <Check className="h-5 w-5 text-emerald-500 mx-auto" />;
     if (val === "x") return <Minus className="h-5 w-5 text-muted-foreground/30 mx-auto" />;
     if (val === "Unlimited") return (
-      <Badge className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white border-0 shadow-md">
+      <Badge className="bg-primary text-primary-foreground border-0">
         Unlimited
       </Badge>
     );
@@ -80,7 +80,7 @@ const PricingPage: NextPage = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <Header />
-      <main className="flex-grow py-12">
+      <main className="flex-grow py-16">
         <Section
           id="pricing-header"
           title="Simple, transparent plans."
@@ -88,27 +88,27 @@ const PricingPage: NextPage = () => {
           align="center"
         >
           {/* Pricing Table */}
-          <Card className="mt-12 overflow-hidden border-border/50 bg-white/50 backdrop-blur-sm shadow-xl">
+          <Card className="mt-16 overflow-hidden border shadow-lg">
             <CardContent className="p-0">
               <div className="overflow-x-auto">
                 <Table>
                   <TableHeader>
-                    <TableRow className="bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50 border-b-2 border-border/50">
-                      <TableHead className="font-bold text-foreground text-base">Features</TableHead>
+                    <TableRow className="bg-muted/30 border-b">
+                      <TableHead className="font-bold text-foreground text-base py-6 pl-8">Features</TableHead>
                       {tiers.map((tier) => (
-                        <TableHead key={tier.name} className="text-center relative">
+                        <TableHead key={tier.name} className="text-center py-6 px-8 relative">
                           {tier.popular && (
-                            <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                              <Badge className="bg-gradient-to-r from-orange-500 to-red-500 text-white border-0 shadow-lg">
+                            <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                              <Badge className="bg-primary text-primary-foreground border-0 shadow-md px-3 py-1">
                                 <Sparkles className="h-3 w-3 mr-1" />
                                 Popular
                               </Badge>
                             </div>
                           )}
-                          <div className={`text-lg font-bold bg-gradient-to-r ${tier.gradient} bg-clip-text text-transparent`}>
+                          <div className="text-lg font-bold text-foreground mb-2">
                             {tier.name}
                           </div>
-                          <Badge variant="outline" className="mt-2 text-xs font-semibold border-2">
+                          <Badge variant="outline" className="text-xs font-semibold">
                             {tier.price}
                           </Badge>
                         </TableHead>
@@ -118,37 +118,37 @@ const PricingPage: NextPage = () => {
                   <TableBody>
                     {featureGroups.map((group) => (
                       <React.Fragment key={group.title}>
-                        <TableRow className="bg-gradient-to-r from-muted/50 to-muted/30">
+                        <TableRow className="bg-muted/20">
                           <TableCell
                             colSpan={5}
-                            className="text-xs font-bold text-foreground uppercase tracking-widest py-3"
+                            className="text-xs font-bold text-foreground uppercase tracking-wider py-4 pl-8"
                           >
                             {group.title}
                           </TableCell>
                         </TableRow>
-                        {group.features.map((feature, idx) => (
+                        {group.features.map((feature) => (
                           <TableRow 
                             key={feature.name} 
-                            className={`hover:bg-blue-50/50 transition-colors ${idx % 2 === 0 ? 'bg-white/50' : 'bg-muted/20'}`}
+                            className="hover:bg-muted/10 transition-colors"
                           >
-                            <TableCell className="font-medium text-foreground">{feature.name}</TableCell>
-                            <TableCell className="text-center">{renderCell(feature.starter)}</TableCell>
-                            <TableCell className="text-center">{renderCell(feature.plus)}</TableCell>
-                            <TableCell className="text-center bg-orange-50/30">{renderCell(feature.pro)}</TableCell>
-                            <TableCell className="text-center">{renderCell(feature.enterprise)}</TableCell>
+                            <TableCell className="font-medium text-foreground py-4 pl-8">{feature.name}</TableCell>
+                            <TableCell className="text-center py-4 px-8">{renderCell(feature.starter)}</TableCell>
+                            <TableCell className="text-center py-4 px-8">{renderCell(feature.plus)}</TableCell>
+                            <TableCell className="text-center py-4 px-8">{renderCell(feature.pro)}</TableCell>
+                            <TableCell className="text-center py-4 px-8">{renderCell(feature.enterprise)}</TableCell>
                           </TableRow>
                         ))}
                       </React.Fragment>
                     ))}
                     {/* Footer Row with CTAs */}
-                    <TableRow className="bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50 border-t-2 border-border/50">
-                      <TableCell />
+                    <TableRow className="bg-muted/30 border-t">
+                      <TableCell className="py-6" />
                       {tiers.map((tier) => (
-                        <TableCell key={tier.name} className="text-center py-6">
+                        <TableCell key={tier.name} className="text-center py-8 px-8">
                           <Button 
-                            variant="outline" 
+                            variant={tier.popular ? "default" : "outline"}
                             disabled 
-                            className={`w-full border-2 ${tier.popular ? 'bg-gradient-to-r from-orange-500 to-red-500 text-white border-0' : ''}`}
+                            className="w-full"
                           >
                             Coming Soon
                           </Button>
@@ -162,10 +162,10 @@ const PricingPage: NextPage = () => {
           </Card>
 
           {/* Enterprise Callout */}
-          <Alert className="mt-12 max-w-3xl mx-auto border-blue-200 bg-gradient-to-r from-blue-50 to-indigo-50 shadow-lg">
-            <Info className="h-5 w-5 text-blue-600" />
-            <AlertTitle className="font-semibold text-blue-900">Looking for something custom?</AlertTitle>
-            <AlertDescription className="text-blue-800">
+          <Alert className="mt-16 max-w-3xl mx-auto border-primary/20 bg-primary/5">
+            <Info className="h-5 w-5 text-primary" />
+            <AlertTitle className="font-semibold text-foreground">Looking for something custom?</AlertTitle>
+            <AlertDescription className="text-muted-foreground">
               Our Enterprise plan includes everything in Pro plus custom website development, on-premise deployment options, and dedicated service management. Contact us to learn more.
             </AlertDescription>
           </Alert>
