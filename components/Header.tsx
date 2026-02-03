@@ -44,7 +44,7 @@ export default function Header() {
           
           {isLoggedIn ? (
             <Button size="sm" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg shadow-blue-500/25" asChild>
-              <a href={`${APP_URL}/dashboard`}>View Dashboard</a>
+              <a href={`${APP_URL}/dashboard`}>Go to App</a>
             </Button>
           ) : (
             <>
