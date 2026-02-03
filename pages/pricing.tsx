@@ -89,7 +89,7 @@ const PricingPage: NextPage = () => {
         >
           {/* Pricing Table */}
           <Card className="mt-16 overflow-hidden border shadow-lg">
-            <CardContent className="p-0 pt-6">
+            <CardContent className="p-0 pt-8">
               <div className="overflow-x-auto">
                 <Table>
                   <TableHeader>
@@ -101,7 +101,7 @@ const PricingPage: NextPage = () => {
                           className={`text-center py-6 px-8 relative ${tier.popular ? 'bg-primary/10' : ''}`}
                         >
                           {tier.popular && (
-                            <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                            <div className="absolute -top-6 left-1/2 -translate-x-1/2">
                               <Badge className="bg-primary text-primary-foreground border-0 shadow-md px-3 py-1">
                                 <Sparkles className="h-3 w-3 mr-1" />
                                 Popular
