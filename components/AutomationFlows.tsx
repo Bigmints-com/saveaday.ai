@@ -10,8 +10,7 @@ import {
   ClipboardCheck,
   Database,
   Zap,
-  Clock,
-  ArrowRight
+  Clock
 } from "lucide-react";
 
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
@@ -27,8 +26,8 @@ const automations = [
     category: "Experience",
     timeSaved: "15 mins",
     apps: [
-      { name: "Bookings", icon: Calendar, color: "from-blue-500 to-blue-600" },
-      { name: "Rewards", icon: Gift, color: "from-pink-500 to-pink-600" }
+      { name: "Bookings", icon: Calendar, color: "text-blue-600" },
+      { name: "Rewards", icon: Gift, color: "text-pink-600" }
     ]
   },
   {
@@ -37,8 +36,8 @@ const automations = [
     category: "Operations",
     timeSaved: "10 mins",
     apps: [
-      { name: "Surveys", icon: ClipboardCheck, color: "from-amber-500 to-amber-600" },
-      { name: "Contacts", icon: Database, color: "from-emerald-500 to-emerald-600" }
+      { name: "Surveys", icon: ClipboardCheck, color: "text-amber-600" },
+      { name: "Contacts", icon: Database, color: "text-emerald-600" }
     ]
   },
   {
@@ -47,8 +46,8 @@ const automations = [
     category: "Growth",
     timeSaved: "20 mins",
     apps: [
-      { name: "Leads", icon: Users, color: "from-orange-500 to-orange-600" },
-      { name: "Comm", icon: Mail, color: "from-purple-500 to-purple-600" }
+      { name: "Leads", icon: Users, color: "text-orange-600" },
+      { name: "Comm", icon: Mail, color: "text-purple-600" }
     ]
   },
   {
@@ -57,8 +56,8 @@ const automations = [
     category: "Operations",
     timeSaved: "15 mins",
     apps: [
-      { name: "Bookings", icon: Calendar, color: "from-blue-500 to-blue-600" },
-      { name: "Tasks", icon: CheckCircle2, color: "from-green-500 to-green-600" }
+      { name: "Bookings", icon: Calendar, color: "text-blue-600" },
+      { name: "Tasks", icon: CheckCircle2, color: "text-green-600" }
     ]
   },
   {
@@ -67,8 +66,8 @@ const automations = [
     category: "Experience",
     timeSaved: "30 mins",
     apps: [
-      { name: "Catalog", icon: ShoppingBag, color: "from-indigo-500 to-indigo-600" },
-      { name: "Bookings", icon: Calendar, color: "from-blue-500 to-blue-600" }
+      { name: "Catalog", icon: ShoppingBag, color: "text-indigo-600" },
+      { name: "Bookings", icon: Calendar, color: "text-blue-600" }
     ]
   },
   {
@@ -77,8 +76,8 @@ const automations = [
     category: "Growth",
     timeSaved: "10 mins",
     apps: [
-      { name: "Referrals", icon: UserPlus, color: "from-cyan-500 to-cyan-600" },
-      { name: "Rewards", icon: Gift, color: "from-pink-500 to-pink-600" }
+      { name: "Referrals", icon: UserPlus, color: "text-cyan-600" },
+      { name: "Rewards", icon: Gift, color: "text-pink-600" }
     ]
   }
 ];
@@ -92,19 +91,19 @@ export default function AutomationFlows() {
 
   return (
     <div className="space-y-10">
-      {/* Category Filter */}
+      {/* Category Filter using ToggleGroup */}
       <div className="flex justify-center">
         <ToggleGroup 
           type="single" 
           value={activeCategory} 
-          onValueChange={(value: string) => value && setActiveCategory(value)}
-          className="bg-muted/50 p-1.5 rounded-xl border border-border/50"
+          onValueChange={(value) => value && setActiveCategory(value)}
+          className="bg-muted p-1 rounded-lg"
         >
           {categories.map((cat) => (
             <ToggleGroupItem 
               key={cat} 
               value={cat}
-              className="px-5 py-2.5 text-sm font-medium rounded-lg data-[state=on]:bg-white data-[state=on]:shadow-md data-[state=on]:text-foreground transition-all"
+              className="px-4 py-2 text-sm font-medium data-[state=on]:bg-background data-[state=on]:shadow-sm rounded-md"
             >
               {cat}
             </ToggleGroupItem>
@@ -117,43 +116,48 @@ export default function AutomationFlows() {
         {filteredAutomations.map((item) => (
           <Card 
             key={item.id} 
-            className="group cursor-pointer border-border/50 bg-white/50 backdrop-blur-sm hover:bg-white hover:shadow-xl hover:shadow-blue-500/5 hover:-translate-y-1 transition-all duration-300"
+            className="group cursor-pointer hover:border-primary transition-colors"
           >
             <CardHeader className="space-y-0 pb-4">
-              {/* App Icons with gradient backgrounds */}
+              {/* App Icons */}
               <div className="flex items-center gap-3">
                 <div className="flex items-center -space-x-2">
                   {item.apps.map((app) => (
                     <div 
                       key={app.name} 
                       title={app.name} 
-                      className={`flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br ${app.color} shadow-lg border-2 border-white`}
+                      className="flex h-10 w-10 items-center justify-center rounded-xl bg-muted border-2 border-background"
                     >
-                      <app.icon className="h-5 w-5 text-white" />
+                      <app.icon className={`h-5 w-5 ${app.color}`} />
                     </div>
                   ))}
                 </div>
-                <div className="h-px flex-1 bg-gradient-to-r from-border to-transparent" />
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 shadow-lg">
-                  <Zap className="h-4 w-4 text-white" />
-                </div>
+                <div className="h-px flex-1 bg-border" />
+                <Zap className="h-4 w-4 text-primary fill-primary" />
               </div>
             </CardHeader>
             <CardContent className="flex-1">
-              <h3 className="text-base font-semibold leading-snug text-foreground group-hover:text-blue-600 transition-colors">
+              <h3 className="text-lg font-semibold leading-snug group-hover:text-primary transition-colors">
                 {item.title}
               </h3>
             </CardContent>
-            <CardFooter className="flex items-center justify-between pt-4 border-t border-border/50">
-              <Badge className="gap-1.5 font-semibold bg-gradient-to-r from-emerald-500 to-teal-500 text-white border-0">
+            <CardFooter className="flex items-center justify-between pt-4 border-t">
+              <Badge variant="secondary" className="gap-1.5 font-semibold">
                 <Clock className="h-3 w-3" />
                 Saves {item.timeSaved}
               </Badge>
-              <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-blue-600 group-hover:translate-x-1 transition-all" />
+              <Badge variant="outline" className="text-muted-foreground">
+                Automated
+              </Badge>
             </CardFooter>
           </Card>
         ))}
       </div>
+
+      {/* Footer Message */}
+      <p className="text-center text-sm text-muted-foreground">
+        Quantifiable time recovery from the <span className="text-primary font-medium">SaveADay</span> internal ecosystem.
+      </p>
     </div>
   );
 }

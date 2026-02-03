@@ -1,8 +1,9 @@
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export default function Header() {
   return (
-    <header className="border-b border-gray-200 bg-white">
+    <header className="border-b border-border bg-background">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center gap-3">
           <img
@@ -12,22 +13,19 @@ export default function Header() {
             height={32}
             className="h-8 w-8"
           />
-          <span className="text-lg font-medium text-gray-900">SaveADay</span>
+          <span className="text-lg font-medium text-foreground">SaveADay</span>
         </Link>
 
         <div className="flex items-center gap-4">
-          <Link
-            href="/login"
-            className="rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm transition hover:bg-gray-50"
-          >
-            Log in
-          </Link>
-          <Link
-            href="/register"
-            className="rounded-md bg-brand-accent px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:opacity-90"
-          >
-            Get Started
-          </Link>
+          <Button variant="ghost" asChild>
+            <Link href="/pricing">Pricing</Link>
+          </Button>
+          <Button variant="outline" asChild>
+            <Link href="/login">Log in</Link>
+          </Button>
+          <Button asChild>
+            <Link href="/register">Get Started</Link>
+          </Button>
         </div>
       </div>
     </header>

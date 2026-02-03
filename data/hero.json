@@ -1,9 +1,11 @@
 {
-  "headline": "Specialized tools. Seamless synergy.",
+  "headline": "Automate Repetitive Tasks. Save a Day Every Week.",
   "cycles": [
-    "week"
+    "Week",
+    "Month",
+    "Year"
   ],
-  "subtext": "The composable ecosystem for professional founders. Independent apps that stand alone, integrated magic that scales with you.",
+  "subtext": "Use SaveADay apps to automate your repetitive tasks and save a day every week to focus on what matters to you most.",
   "stats": {
     "week": {
       "label": "This week",

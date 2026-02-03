@@ -67,9 +67,9 @@ const featureGroups = [
 
 const PricingPage: NextPage = () => {
   const renderCell = (val: string) => {
-    if (val === "✓") return <Check className="h-5 w-5 text-emerald-500 mx-auto" />;
-    if (val === "x") return <Minus className="h-5 w-5 text-muted-foreground/30 mx-auto" />;
-    if (val === "Unlimited") return <Badge className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white border-0">Unlimited</Badge>;
+    if (val === "✓") return <Check className="h-5 w-5 text-green-500 mx-auto" />;
+    if (val === "x") return <Minus className="h-5 w-5 text-muted-foreground/50 mx-auto" />;
+    if (val === "Unlimited") return <Badge variant="secondary">Unlimited</Badge>;
     return <span className="text-muted-foreground text-sm whitespace-nowrap">{val}</span>;
   };
 
@@ -84,13 +84,13 @@ const PricingPage: NextPage = () => {
           align="center"
         >
           {/* Pricing Table */}
-          <Card className="mt-12 overflow-hidden border-border/50 bg-white/50 backdrop-blur-sm shadow-xl">
+          <Card className="mt-12 overflow-hidden">
             <CardContent className="p-0">
               <div className="overflow-x-auto">
                 <Table>
                   <TableHeader>
-                    <TableRow className="bg-gradient-to-r from-blue-50 to-indigo-50 border-b border-border/50">
-                      <TableHead className="font-semibold text-foreground">Features</TableHead>
+                    <TableRow className="bg-muted/50">
+                      <TableHead className="font-semibold">Features</TableHead>
                       {tiers.map((tier) => (
                         <TableHead key={tier.name} className="text-center">
                           <div className="text-base font-bold text-foreground">{tier.name}</div>
@@ -107,13 +107,13 @@ const PricingPage: NextPage = () => {
                         <TableRow className="bg-muted/30">
                           <TableCell
                             colSpan={5}
-                            className="text-xs font-bold text-muted-foreground uppercase tracking-widest py-3"
+                            className="text-xs font-bold text-muted-foreground uppercase tracking-widest"
                           >
                             {group.title}
                           </TableCell>
                         </TableRow>
                         {group.features.map((feature) => (
-                          <TableRow key={feature.name} className="hover:bg-blue-50/50 transition-colors">
+                          <TableRow key={feature.name} className="hover:bg-muted/50">
                             <TableCell className="font-medium">{feature.name}</TableCell>
                             <TableCell className="text-center">{renderCell(feature.starter)}</TableCell>
                             <TableCell className="text-center">{renderCell(feature.plus)}</TableCell>
@@ -124,7 +124,7 @@ const PricingPage: NextPage = () => {
                       </React.Fragment>
                     ))}
                     {/* Footer Row with CTAs */}
-                    <TableRow className="bg-gradient-to-r from-blue-50 to-indigo-50">
+                    <TableRow className="bg-muted/50">
                       <TableCell />
                       {tiers.map((tier) => (
                         <TableCell key={tier.name} className="text-center py-6">
@@ -141,10 +141,10 @@ const PricingPage: NextPage = () => {
           </Card>
 
           {/* Enterprise Callout */}
-          <Alert className="mt-12 max-w-3xl mx-auto border-blue-200 bg-gradient-to-r from-blue-50 to-indigo-50">
-            <Info className="h-5 w-5 text-blue-600" />
-            <AlertTitle className="font-semibold text-blue-900">Looking for something custom?</AlertTitle>
-            <AlertDescription className="text-blue-800">
+          <Alert className="mt-12 max-w-3xl mx-auto">
+            <Info className="h-5 w-5" />
+            <AlertTitle className="font-semibold">Looking for something custom?</AlertTitle>
+            <AlertDescription>
               Our Enterprise plan includes everything in Pro plus custom website development, on-premise deployment options, and dedicated service management. Contact us to learn more.
             </AlertDescription>
           </Alert>

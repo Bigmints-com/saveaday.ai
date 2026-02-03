@@ -18,7 +18,7 @@ export default function AutomationShowcase() {
   const [scene, setScene] = useState<Scene>(
     prefersReducedMotion ? "complete" : "idle"
   );
-  const timeoutRef = useRef<number>();
+  const timeoutRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
     if (prefersReducedMotion) {
