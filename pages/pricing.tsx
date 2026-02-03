@@ -88,7 +88,7 @@ const PricingPage: NextPage = () => {
           align="center"
         >
           {/* Pricing Table */}
-          <Card className="mt-16 overflow-hidden border shadow-lg">
+          <Card className="mt-16 border shadow-lg">
             <CardContent className="p-0 pt-8">
               <div className="overflow-x-auto">
                 <Table>
