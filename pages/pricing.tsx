@@ -1,6 +1,6 @@
 import React from "react";
 import type { NextPage } from "next";
-import { Check, Minus, Info, Sparkles } from "lucide-react";
+import { Check, Minus, Sparkles, ArrowRight } from "lucide-react";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -9,7 +9,6 @@ import Section from "@/components/Section";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import {
   Table,
   TableBody,
@@ -23,44 +22,43 @@ const tiers = [
   { name: "Starter", price: "Coming Soon" },
   { name: "Plus", price: "Coming Soon" },
   { name: "Pro", price: "Coming Soon", popular: true },
-  { name: "Enterprise", price: "Custom" },
 ];
 
 const featureGroups = [
   {
     title: "Core Apps",
     features: [
-      { name: "Contacts", starter: "✓", plus: "✓", pro: "✓", enterprise: "✓" },
-      { name: "Leads", starter: "✓", plus: "✓", pro: "✓", enterprise: "✓" },
-      { name: "Links", starter: "✓", plus: "✓", pro: "✓", enterprise: "✓" },
-      { name: "Catalogues", starter: "✓", plus: "1", pro: "Unlimited", enterprise: "Unlimited" },
-      { name: "Surveys", starter: "✓", plus: "4", pro: "Unlimited", enterprise: "Unlimited" },
-      { name: "Tasks", starter: "✓", plus: "✓", pro: "✓", enterprise: "✓" },
-      { name: "Feeds", starter: "x", plus: "10", pro: "100", enterprise: "Unlimited" },
-      { name: "Bookings", starter: "x", plus: "✓", pro: "Unlimited", enterprise: "Unlimited" },
-      { name: "Waitlists", starter: "x", plus: "✓", pro: "Unlimited", enterprise: "Unlimited" },
-      { name: "Referrals", starter: "x", plus: "✓", pro: "Unlimited", enterprise: "Unlimited" },
-      { name: "Rewards", starter: "x", plus: "x", pro: "Unlimited", enterprise: "Unlimited" },
+      { name: "Contacts", starter: "✓", plus: "✓", pro: "✓" },
+      { name: "Leads", starter: "✓", plus: "✓", pro: "✓" },
+      { name: "Links", starter: "✓", plus: "✓", pro: "✓" },
+      { name: "Catalogues", starter: "✓", plus: "1", pro: "Unlimited" },
+      { name: "Surveys", starter: "✓", plus: "4", pro: "Unlimited" },
+      { name: "Tasks", starter: "✓", plus: "✓", pro: "✓" },
+      { name: "Feeds", starter: "x", plus: "10", pro: "100" },
+      { name: "Bookings", starter: "x", plus: "✓", pro: "Unlimited" },
+      { name: "Waitlists", starter: "x", plus: "✓", pro: "Unlimited" },
+      { name: "Referrals", starter: "x", plus: "✓", pro: "Unlimited" },
+      { name: "Rewards", starter: "x", plus: "x", pro: "Unlimited" },
     ],
   },
   {
     title: "Platform Features",
     features: [
-      { name: "AI Support Agent", starter: "x", plus: "x", pro: "✓", enterprise: "✓" },
-      { name: "Managed AI", starter: "x", plus: "50k tokens", pro: "100k tokens", enterprise: "Custom" },
-      { name: "Automations", starter: "x", plus: "10", pro: "Unlimited", enterprise: "Unlimited" },
-      { name: "AI Reports", starter: "x", plus: "5", pro: "Unlimited", enterprise: "Unlimited" },
-      { name: "Initial Set Up", starter: "✓", plus: "✓", pro: "✓", enterprise: "✓" },
-      { name: "Team Management", starter: "2 members", plus: "10 members", pro: "Unlimited", enterprise: "Unlimited" },
+      { name: "AI Support Agent", starter: "x", plus: "x", pro: "✓" },
+      { name: "Managed AI", starter: "x", plus: "50k tokens", pro: "100k tokens" },
+      { name: "Automations", starter: "x", plus: "10", pro: "Unlimited" },
+      { name: "AI Reports", starter: "x", plus: "5", pro: "Unlimited" },
+      { name: "Initial Set Up", starter: "✓", plus: "✓", pro: "✓" },
+      { name: "Team Management", starter: "2 members", plus: "10 members", pro: "Unlimited" },
     ],
   },
   {
     title: "Add-Ons",
     features: [
-      { name: "Custom Website", starter: "Coming Soon", plus: "Coming Soon", pro: "Coming Soon", enterprise: "Included" },
-      { name: "Custom Data connectors", starter: "Coming Soon", plus: "Coming Soon", pro: "Coming Soon", enterprise: "Included" },
-      { name: "On-Premise", starter: "x", plus: "x", pro: "x", enterprise: "Coming Soon" },
-      { name: "Service Management", starter: "Coming Soon", plus: "Coming Soon", pro: "Coming Soon", enterprise: "Included" },
+      { name: "Custom Website", starter: "Coming Soon", plus: "Coming Soon", pro: "Coming Soon" },
+      { name: "Custom Data connectors", starter: "Coming Soon", plus: "Coming Soon", pro: "Coming Soon" },
+      { name: "On-Premise", starter: "x", plus: "x", pro: "x" },
+      { name: "Service Management", starter: "Coming Soon", plus: "Coming Soon", pro: "Coming Soon" },
     ],
   }
 ];
@@ -123,7 +121,7 @@ const PricingPage: NextPage = () => {
                       <React.Fragment key={group.title}>
                         <TableRow className="bg-muted/20">
                           <TableCell
-                            colSpan={5}
+                            colSpan={4}
                             className="text-xs font-bold text-foreground uppercase tracking-wider py-4 pl-8"
                           >
                             {group.title}
@@ -138,7 +136,6 @@ const PricingPage: NextPage = () => {
                             <TableCell className="text-center py-4 px-8">{renderCell(feature.starter)}</TableCell>
                             <TableCell className="text-center py-4 px-8">{renderCell(feature.plus)}</TableCell>
                             <TableCell className="text-center py-4 px-8 bg-primary/5">{renderCell(feature.pro)}</TableCell>
-                            <TableCell className="text-center py-4 px-8">{renderCell(feature.enterprise)}</TableCell>
                           </TableRow>
                         ))}
                       </React.Fragment>
@@ -168,13 +165,48 @@ const PricingPage: NextPage = () => {
           </Card>
 
           {/* Enterprise Callout */}
-          <Alert className="mt-16 max-w-3xl mx-auto border-primary/20 bg-primary/5">
-            <Info className="h-5 w-5 text-primary" />
-            <AlertTitle className="font-semibold text-foreground">Looking for something custom?</AlertTitle>
-            <AlertDescription className="text-muted-foreground">
-              Our Enterprise plan includes everything in Pro plus custom website development, on-premise deployment options, and dedicated service management. Contact us to learn more.
-            </AlertDescription>
-          </Alert>
+          <Card className="mt-16 max-w-4xl mx-auto border-2 border-primary/20 shadow-xl">
+            <CardContent className="p-8">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div className="flex-1 text-center md:text-left">
+                  <div className="flex items-center justify-center md:justify-start gap-3 mb-3">
+                    <h3 className="text-2xl font-bold text-foreground">Enterprise</h3>
+                    <Badge variant="outline" className="text-xs font-semibold">Custom</Badge>
+                  </div>
+                  <p className="text-muted-foreground text-lg mb-4">
+                    Everything in Pro plus custom website development, unlimited usage, on-premise deployment options, and dedicated service management.
+                  </p>
+                  <ul className="text-sm text-muted-foreground space-y-2 text-left inline-block">
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-emerald-500" />
+                      <span>Unlimited everything</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-emerald-500" />
+                      <span>Custom website included</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-emerald-500" />
+                      <span>On-premise deployment (coming soon)</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-emerald-500" />
+                      <span>Dedicated service management</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="flex flex-col gap-3">
+                  <Button size="lg" disabled className="whitespace-nowrap">
+                    Contact Sales
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                  <p className="text-xs text-muted-foreground text-center">
+                    Custom pricing based on your needs
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </Section>
       </main>
       <Footer />
