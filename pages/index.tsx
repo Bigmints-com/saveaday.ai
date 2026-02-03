@@ -54,7 +54,7 @@ const HomePage: NextPage = () => {
           eyebrow="Human + Machine"
           title="Powered by You, Assisted by AI"
           description="You stay in control. AI handles the execution. Together, you accomplish more with less effort."
-          gradient
+       
         >
           <AISection />
         </Section>
